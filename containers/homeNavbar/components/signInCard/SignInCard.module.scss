@@ -1,0 +1,41 @@
+.signInCard {
+  position: absolute;
+  top: 70px;
+  right: var(--side-padding);
+  // width: 300px;
+  width: 30%;
+  max-width: 300px;
+  min-width: 200px;
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    transition: background 0.15s ease;
+    font-size: var(--base-font);
+
+    &:hover {
+      background-color: var(--light-gray);
+    }
+  }
+
+  .signIn,
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .signIn {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}

@@ -1,6 +1,6 @@
 import "./globals.scss";
 import { Poppins } from "next/font/google";
-import HomeNavbar from "@/containers/homeNavbar/HomeNavbar";
+// import Provider from "react-redux";
 
 const poppins = Poppins({
   weight: ["400", "500", "700"],
@@ -19,12 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
-        {/* <header>
-          <HomeNavbar />
-        </header> */}
-        {children}
-      </body>
+      {/* <Provider> */}
+      <body className={poppins.className}>{children}</body>
+      {/* </Provider> */}
     </html>
   );
 }

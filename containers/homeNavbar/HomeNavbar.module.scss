@@ -1,7 +1,10 @@
 .homeNavbar {
-  background-color: #fff;
-  height: 80px;
-  border-bottom: 1px solid var(--border-color);
+  height: 100%;
+  width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+  max-width: 100%;
+
   > *:first-child {
     display: flex !important;
   }

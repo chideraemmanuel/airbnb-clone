@@ -5,7 +5,9 @@ import HomeNavbar from "@/containers/homeNavbar/HomeNavbar";
 export default function Home() {
   return (
     <>
-      <HomeNavbar />
+      <header className={styles.header}>
+        <HomeNavbar />
+      </header>
       <main className={styles.main}>
         <h2>Main content goes here!</h2>
       </main>
