@@ -1,0 +1,63 @@
+.homeDateFilter {
+  min-width: 348px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //   gap: 15px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+  padding: var(--filter-padding);
+  border-radius: 40px;
+  transition: 0.2s ease;
+
+  &:hover {
+    box-shadow: var(--box-shadow);
+  }
+
+  > button {
+    background-color: #fff;
+    color: var(--black);
+    font-weight: 600;
+    border: none;
+    font-size: var(--base-font);
+    // padding: 10px;
+    cursor: pointer;
+    padding: 10px 15px;
+  }
+
+  &__break {
+    height: 40px;
+    max-height: 100%;
+    width: 1px;
+    background-color: var(--border-color);
+    // margin: 0 15px;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+
+    button {
+      background-color: #fff;
+      color: var(--light-gray);
+      border: none;
+      font-size: var(--base-font);
+      font-weight: 600;
+      padding: 10px;
+      padding-left: 15px;
+      cursor: pointer;
+
+      &:nth-child(2) {
+        color: #fff;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
