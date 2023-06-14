@@ -1,0 +1,30 @@
+.bookingDetailsDateFilter {
+  min-width: 300px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //   gap: 15px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+  padding: var(--filter-padding);
+  border-radius: 40px;
+  transition: 0.2s ease;
+
+  &__text {
+    padding: 0 20px;
+    color: var(--gray);
+  }
+
+  &__button {
+    border: none;
+    color: #fff;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
