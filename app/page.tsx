@@ -7,6 +7,7 @@ import { FiChevronRight } from "react-icons/fi";
 import { IoMdSwitch } from "react-icons/io";
 import DesktopCategoriesSlider from "@/containers/homeNavbar/components/desktopNavigation/components/desktopCategoriesSlider/DesktopCategoriesSlider";
 import TaxToggle from "@/components/taxToggle/TaxToggle";
+import Showcase from "@/containers/showcase/Showcase";
 
 export default function Home() {
   return (
@@ -29,6 +30,8 @@ export default function Home() {
         </div>
 
         <TaxToggle />
+
+        <Showcase />
       </main>
     </>
   );

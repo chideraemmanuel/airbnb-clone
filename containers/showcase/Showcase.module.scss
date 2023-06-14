@@ -1,0 +1,25 @@
+.showcase {
+  margin: 50px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  //   gap: 20px;
+  width: 100%;
+  row-gap: 30px;
+  column-gap: 20px;
+
+  @media screen and (max-width: 1130px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 950px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 545px) {
+    grid-template-columns: 1fr;
+  }
+
+  > * {
+    min-width: 0;
+  }
+}
