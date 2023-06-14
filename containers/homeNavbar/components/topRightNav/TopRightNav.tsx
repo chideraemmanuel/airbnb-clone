@@ -8,7 +8,7 @@ import SignInCard from "../signInCard/SignInCard";
 const TopRightNav = () => {
   return (
     <>
-      <SignInCard />
+      {/* <SignInCard /> */}
       <div className={styles.topRightNav}>
         <Link href="/">Airbnb your home</Link>
 

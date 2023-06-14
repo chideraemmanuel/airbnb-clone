@@ -3,7 +3,7 @@
     display: none;
 
     &:checked + label {
-      // background-color: red;
+      // background-color: red !important;
       color: var(--black);
       // text-decoration: underline;
 
@@ -25,13 +25,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5px;
     cursor: pointer;
     color: var(--gray);
     padding-bottom: 10px;
     // background-color: yellow;
 
     svg {
-      font-size: var(--md-font);
+      font-size: var(--lg-font);
     }
 
     span {

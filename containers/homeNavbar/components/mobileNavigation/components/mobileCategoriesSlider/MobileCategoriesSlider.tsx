@@ -3,7 +3,34 @@ import styles from "./MobileCategoriesSlider.module.scss";
 import { FaHome } from "react-icons/fa";
 
 // const dum = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-const dum = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"];
+const dum = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
 
 const MobileCategoriesSlider = () => {
   return (
