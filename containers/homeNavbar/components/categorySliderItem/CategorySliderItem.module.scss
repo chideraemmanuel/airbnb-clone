@@ -1,0 +1,41 @@
+.categorySliderItem {
+  input {
+    display: none;
+
+    &:checked + label {
+      // background-color: red;
+      color: var(--black);
+      // text-decoration: underline;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        // top: 100%;
+        height: 2px;
+        width: 100%;
+        background-color: var(--black);
+      }
+    }
+  }
+
+  label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--gray);
+    padding-bottom: 10px;
+    // background-color: yellow;
+
+    svg {
+      font-size: var(--md-font);
+    }
+
+    span {
+      font-size: var(--sm-font);
+    }
+  }
+}

@@ -1,15 +1,20 @@
 .header {
-  background-color: #fff;
-  height: 80px;
-  border-bottom: 1px solid var(--border-color);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  // background-color: #fff;
+  // height: 80px;
+  // border-bottom: 1px solid var(--border-color);
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // right: 0;
 }
 
 .main {
+  // margin-top: var(--navbar-height);
   margin-top: 80px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 135px;
+  }
   h2 {
     font-size: var(--base-font);
   }

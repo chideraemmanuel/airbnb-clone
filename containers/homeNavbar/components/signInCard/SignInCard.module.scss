@@ -19,7 +19,7 @@
     font-size: var(--base-font);
 
     &:hover {
-      background-color: var(--light-gray);
+      background-color: var(--very-light-gray);
     }
   }
 
@@ -27,7 +27,11 @@
   .links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 7px;
+
+    @media screen and (max-width: 950px) {
+      gap: 5px;
+    }
   }
 
   .signIn {

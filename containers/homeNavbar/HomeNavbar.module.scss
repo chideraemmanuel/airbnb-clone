@@ -1,9 +1,21 @@
 .homeNavbar {
-  height: 100%;
-  width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--side-padding);
-  max-width: 100%;
+  // height: 100%;
+  // width: var(--max-width);
+  // margin: 0 auto;
+  // padding: 0 var(--side-padding);
+  // max-width: 100%;
+
+  background-color: #fff;
+  height: var(--navbar-height);
+  border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  @media screen and (max-width: 768px) {
+    box-shadow: var(--box-shadow);
+  }
 
   > *:first-child {
     display: flex !important;

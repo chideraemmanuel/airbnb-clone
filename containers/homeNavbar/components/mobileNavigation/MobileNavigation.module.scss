@@ -1,0 +1,13 @@
+.mobileNavigation {
+  height: 100%;
+  //   width: var(--max-width);
+  // margin: 0 auto;
+  padding: 0 var(--side-padding);
+  padding-top: 15px;
+  max-width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
