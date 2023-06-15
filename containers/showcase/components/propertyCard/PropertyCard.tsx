@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./PropertyCard.module.scss";
-import testImage from "@/assets/test.webp";
+import testImage from "@/assets/room.webp";
 import { FaHeart, FaStar } from "react-icons/fa";
 
 const PropertyCard = () => {

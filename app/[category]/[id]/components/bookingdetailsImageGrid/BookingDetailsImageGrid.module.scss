@@ -1,0 +1,46 @@
+.bookingDetailsImageGrid {
+  position: relative;
+  padding: 0 var(--side-padding);
+  position: relative;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+  }
+
+  img:first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+  }
+
+  button {
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+
+    padding: 7px 10px;
+    border: 1px solid var(--black);
+    border-radius: 7px;
+    background-color: #fff;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+      background-color: var(--very-light-gray);
+    }
+  }
+}

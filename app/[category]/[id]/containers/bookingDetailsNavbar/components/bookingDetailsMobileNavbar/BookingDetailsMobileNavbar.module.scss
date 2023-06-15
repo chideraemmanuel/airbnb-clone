@@ -1,0 +1,23 @@
+.bookingDetailsMobileNavbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  padding: 20px var(--side-padding);
+
+  svg {
+    font-size: var(--md-font);
+    padding: 7px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    box-sizing: content-box;
+    background-color: #fff;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}

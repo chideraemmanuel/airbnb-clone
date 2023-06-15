@@ -1,0 +1,69 @@
+.bookingDetailsPageHeader {
+  padding: 0 var(--side-padding);
+  padding-top: 30px;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 20px;
+  }
+
+  h1 {
+    font-size: var(--lg-font);
+    margin-bottom: 10px;
+
+    @media screen and (max-width: 768px) {
+      font-size: var(--md-font);
+    }
+  }
+
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span,
+    svg,
+    a {
+      font-size: var(--base-font);
+    }
+
+    &_left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        > a:last-child {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &_right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+
+      > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        > span:last-child {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

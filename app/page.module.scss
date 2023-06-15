@@ -1,9 +1,12 @@
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // right: 0;
   z-index: 2;
+
+  position: sticky;
+  top: 0;
 
   // border: 1px solid blue;
 }
@@ -12,11 +15,11 @@
   max-width: var(--max-width);
   padding: 0 var(--side-padding);
   margin: 0 auto;
-  margin-top: 200px;
+  // margin-top: 200px;
 
-  @media screen and (max-width: 768px) {
-    margin-top: 170px;
-  }
+  // @media screen and (max-width: 768px) {
+  //   margin-top: 170px;
+  // }
 
   // @media screen and (max-width: 545px) {
   //   margin-top: 160px;
