@@ -1,5 +1,6 @@
 .homeDateFilter {
-  min-width: 348px;
+  min-width: 340px;
+  max-width: 350px;
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -20,7 +21,7 @@
     color: var(--black);
     font-weight: 600;
     border: none;
-    font-size: var(--base-font);
+    font-size: var(--sm-font);
     // padding: 10px;
     cursor: pointer;
     padding: 10px 15px;
@@ -42,7 +43,7 @@
       background-color: #fff;
       color: var(--light-gray);
       border: none;
-      font-size: var(--base-font);
+      font-size: var(--sm-font);
       font-weight: 600;
       padding: 10px;
       padding-left: 15px;

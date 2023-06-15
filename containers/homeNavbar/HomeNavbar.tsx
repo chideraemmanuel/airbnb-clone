@@ -8,7 +8,7 @@ const HomeNavbar = () => {
   return (
     <nav className={styles.homeNavbar}>
       <DesktopNavigation children={<HomeDateFilter />} />
-      <TabletNavigation children={<HomeDateFilter />} />
+      {/* <TabletNavigation children={<HomeDateFilter />} /> */}
       <MobileNavigation />
     </nav>
   );

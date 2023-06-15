@@ -7,7 +7,7 @@ const MobileNavigation = () => {
     <div className={styles.mobileNavigation}>
       <MobileHomeFilfer />
       {/* <MobileHomeFilfer /> */}
-      <MobileCategoriesSlider />
+      {/* <MobileCategoriesSlider /> */}
     </div>
   );
 };

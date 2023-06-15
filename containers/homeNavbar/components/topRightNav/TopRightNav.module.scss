@@ -4,6 +4,10 @@
   gap: 10px;
   font-weight: 600;
 
+  @media screen and (max-width: 950px) {
+    gap: 5px;
+  }
+
   a {
     font-size: var(--base-font);
     padding: 7px 15px;

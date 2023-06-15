@@ -6,16 +6,20 @@ import { FiSearch, FiMenu, FiUser, FiGlobe } from "react-icons/fi";
 import { CiGlobe } from "react-icons/ci";
 import TopRightNav from "../topRightNav/TopRightNav";
 import NavContainer from "../navContainer/NavContainer";
+import MobileLogo from "@/components/logo/mobileLogo/MobileLogo";
 
 const DesktopNavigation = ({ children }: { children: React.ReactNode }) => {
   return (
     <NavContainer>
       <div className={styles.desktopNavigation}>
-        <Link href="/">
-          <DesktopLogo />
-        </Link>
+        <div className={styles.desktopNavigation__left}>
+          <Link href="/" className={styles.desktopNavigation__left_logo}>
+            <DesktopLogo />
+            <MobileLogo />
+          </Link>
 
-        {children}
+          {children}
+        </div>
 
         <TopRightNav />
       </div>

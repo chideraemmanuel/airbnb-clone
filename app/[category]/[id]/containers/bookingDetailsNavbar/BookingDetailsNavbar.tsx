@@ -7,7 +7,6 @@ const BookingDetailsNavbar = () => {
   return (
     <nav className={styles.bookingDetailsNavbar}>
       <DesktopNavigation children={<BookingDetailsDateFilter />} />
-      <TabletNavigation children={<BookingDetailsDateFilter />} />
       <span>Mobile Navigation</span>
     </nav>
   );

@@ -17,7 +17,7 @@
   a {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 10px;
   }
 
@@ -38,10 +38,14 @@
   }
 
   &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     &_location {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 100%;
 
       &_rating {
         display: flex;

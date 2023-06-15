@@ -8,29 +8,18 @@ import { IoMdSwitch } from "react-icons/io";
 import DesktopCategoriesSlider from "@/containers/homeNavbar/components/desktopNavigation/components/desktopCategoriesSlider/DesktopCategoriesSlider";
 import TaxToggle from "@/components/taxToggle/TaxToggle";
 import Showcase from "@/containers/showcase/Showcase";
+import DesktopCategoriesFilter from "@/containers/homeNavbar/components/desktopNavigation/components/desktopCategoriesFilter/DesktopCategoriesFilter";
 
 export default function Home() {
   return (
     <>
       <header className={styles.header}>
         <HomeNavbar />
+        <DesktopCategoriesFilter />
       </header>
+
       <main className={styles.main}>
-        <div className={styles.main__header}>
-          <DesktopCategoriesSlider />
-
-          <div className={styles.main__header_chevron}>
-            <FiChevronRight />
-          </div>
-
-          <button className={styles.main__header_filter}>
-            <IoMdSwitch />
-            <span>Filter</span>
-          </button>
-        </div>
-
-        <TaxToggle />
-
+        {/* <TaxToggle /> */}
         <Showcase />
       </main>
     </>

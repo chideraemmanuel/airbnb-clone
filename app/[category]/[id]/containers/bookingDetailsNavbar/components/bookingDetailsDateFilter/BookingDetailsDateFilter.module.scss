@@ -10,6 +10,11 @@
   padding: var(--filter-padding);
   border-radius: 40px;
   transition: 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: var(--box-shadow);
+  }
 
   &__text {
     padding: 0 20px;
