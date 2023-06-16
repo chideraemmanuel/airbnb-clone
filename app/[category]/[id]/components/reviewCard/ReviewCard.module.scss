@@ -1,0 +1,10 @@
+.reviewCard {
+  min-width: 70vw !important;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  flex: 1;
+}

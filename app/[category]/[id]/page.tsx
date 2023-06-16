@@ -6,6 +6,7 @@ import BookingDetailsImageGrid from "./components/bookingdetailsImageGrid/Bookin
 import BookingDetailsMobileCarousel from "./containers/bookingDetailsMobileCarousel/BookingDetailsMobileCarousel";
 import Card from "@/components/card/Card";
 import BookingDetails from "./containers/bookingDetails/BookingDetails";
+import Reviews from "./containers/reviews/Reviews";
 
 const BookingDetailsPage = () => {
   return (
@@ -23,6 +24,8 @@ const BookingDetailsPage = () => {
         </div>
 
         <BookingDetails />
+
+        <Reviews />
       </main>
     </>
   );
