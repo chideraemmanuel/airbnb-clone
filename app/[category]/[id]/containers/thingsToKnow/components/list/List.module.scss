@@ -1,0 +1,28 @@
+.list {
+  &__header {
+    font-size: var(--base-font);
+    margin-bottom: 7px;
+  }
+
+  &__listItems {
+    // display: flex;
+    // flex-direction: column;
+
+    span {
+      display: block;
+      font-size: var(--base-font);
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    text-decoration: underline;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: var(--base-font);
+  }
+}

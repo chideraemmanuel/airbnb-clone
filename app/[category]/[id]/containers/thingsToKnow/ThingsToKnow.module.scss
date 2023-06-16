@@ -1,0 +1,17 @@
+.thingsToKnow {
+  padding: 0 var(--side-padding);
+  padding-bottom: 30px;
+
+  &__header {
+    border-top: 1px solid var(--border-color);
+    padding: 30px 0 20px;
+    font-size: var(--md-font);
+  }
+
+  &__lists {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}

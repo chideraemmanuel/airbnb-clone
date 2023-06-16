@@ -1,5 +1,10 @@
 .review {
   &__paragraph {
     font-size: var(--base-font);
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
