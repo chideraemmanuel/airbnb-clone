@@ -1,0 +1,113 @@
+.bookingDetails {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  align-items: start;
+  gap: 70px;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+
+    // > *:last-child {
+    //   display: none;
+    // }
+  }
+
+  &__details {
+    &_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @media screen and (max-width: 768px) {
+        justify-content: flex-start;
+        gap: 20px;
+      }
+
+      h2 {
+        font-size: var(--md-font);
+
+        @media screen and (max-width: 540px) {
+          font-size: var(--base-font);
+        }
+      }
+
+      img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+
+        @media screen and (max-width: 768px) {
+          width: 40px;
+          height: 40px;
+        }
+
+        @media screen and (max-width: 540px) {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+
+    &_percs {
+      padding: 20px 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid var(--border-color);
+
+      @media screen and (max-width: 540px) {
+        grid-template-columns: 1fr;
+      }
+
+      &_perc {
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        padding: 15px;
+        font-size: var(--sm-font);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        svg {
+          font-size: var(--md-font);
+        }
+      }
+    }
+
+    &_info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-color);
+
+      > div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+          font-size: var(--md-font);
+        }
+
+        h3 {
+          font-size: var(--base-font);
+        }
+
+        span {
+          color: var(--gray);
+          font-size: var(--sm-font);
+        }
+      }
+    }
+  }
+
+  // > *:nth-child(2) {
+  //   position: sticky;
+  //   top: 80px;
+  // }
+}

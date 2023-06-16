@@ -1,0 +1,111 @@
+.meetYourHost {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 100%;
+
+  h4 {
+    font-size: var(--md-font);
+  }
+
+  &__content {
+    background-color: var(--very-light-gray);
+    padding: 30px 100px;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 1130px) {
+      padding: 30px 60px;
+    }
+
+    @media screen and (max-width: 950px) {
+      padding: 30px 40px;
+    }
+
+    @media screen and (max-width: 540px) {
+      padding: 30px 20px;
+    }
+
+    &_bio {
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      //   max-width: 500px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border-color);
+
+      > div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+          font-size: var(--md-font);
+        }
+
+        span {
+          //   font-size: var(--base-font);
+        }
+      }
+
+      > button {
+        display: flex;
+        align-items: center;
+        align-self: flex-start;
+        gap: 3px;
+        background: transparent;
+        border: none;
+        text-decoration: underline;
+        font-size: var(--base-font);
+        cursor: pointer;
+      }
+    }
+
+    &_cohosts {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--border-color);
+
+      &_list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 30px;
+
+        > div {
+          display: flex;
+          align-items: center;
+          gap: 7px;
+
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+
+          span {
+            font-size: var(--base-font);
+          }
+        }
+      }
+
+      a {
+        display: inline-block;
+        background-color: var(--black);
+        color: #fff;
+        font-size: var(--base-font);
+        padding: 10px 20px;
+        border-radius: 7px;
+      }
+    }
+
+    &_footer {
+      font-size: var(--sm-font);
+      color: var(--gray);
+      padding-top: 20px;
+      display: inline-block;
+    }
+  }
+}

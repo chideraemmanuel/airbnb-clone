@@ -4,6 +4,8 @@ import styles from "./page.module.scss";
 import BookingDetailsPageHeader from "./components/bookingDetailsPageHeader/BookingDetailsPageHeader";
 import BookingDetailsImageGrid from "./components/bookingdetailsImageGrid/BookingDetailsImageGrid";
 import BookingDetailsMobileCarousel from "./containers/bookingDetailsMobileCarousel/BookingDetailsMobileCarousel";
+import Card from "@/components/card/Card";
+import BookingDetails from "./containers/bookingDetails/BookingDetails";
 
 const BookingDetailsPage = () => {
   return (
@@ -19,6 +21,8 @@ const BookingDetailsPage = () => {
           <BookingDetailsPageHeader />
           <BookingDetailsImageGrid />
         </div>
+
+        <BookingDetails />
       </main>
     </>
   );
