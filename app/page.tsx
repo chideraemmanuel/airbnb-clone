@@ -19,7 +19,7 @@ export default function Home() {
       </header>
 
       <main className={styles.main}>
-        {/* <TaxToggle /> */}
+        <TaxToggle />
         <Showcase />
       </main>
     </>

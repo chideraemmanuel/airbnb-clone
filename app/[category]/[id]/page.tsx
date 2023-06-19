@@ -9,8 +9,43 @@ import BookingDetails from "./containers/bookingDetails/BookingDetails";
 import Reviews from "./containers/reviews/Reviews";
 import ThingsToKnow from "./containers/thingsToKnow/ThingsToKnow";
 import BookingDetailsFooter from "./containers/bookingDetailsFooter/BookingDetailsFooter";
+import { fetchProperty } from "@/utils/fetchProperty";
+import { propertyTypes } from "@/types";
 
-const BookingDetailsPage = () => {
+const BookingDetailsPage = async ({ params }: { params: { id: string } }) => {
+  const property: propertyTypes[] = await fetchProperty(params.id);
+  // console.log(property[0]);
+  // console.log(property[0].propertyHosts);
+  // console.log(JSON.stringify(params.id));
+
+  const {
+    _id,
+    title,
+    description,
+    prices,
+    location,
+    mainImage,
+    otherImages,
+    room,
+    bathroom,
+    bedType,
+    otherGuests,
+    category: { categoryName },
+    rating,
+    reviews,
+    propertyHosts: {
+      host: {
+        about: { occupation },
+        primaryDetails: { firstName, profileImage },
+      },
+    },
+    availableDates,
+  } = property[0];
+  const { from, to } = availableDates;
+
+  const availableFrom = new Date(from);
+  const availableTo = new Date(to);
+
   return (
     <>
       <header className={styles.bookingDetailsPage__header}>
@@ -19,13 +54,35 @@ const BookingDetailsPage = () => {
 
       <main className={styles.bookingDetailsPage__main}>
         <div className={styles.bookingDetailsPage__main_showcase}>
-          <BookingDetailsMobileCarousel />
+          <BookingDetailsMobileCarousel
+            mainImage={mainImage}
+            otherImages={otherImages}
+            title={title}
+          />
 
-          <BookingDetailsPageHeader />
-          <BookingDetailsImageGrid />
+          <BookingDetailsPageHeader
+            title={title}
+            rating={rating}
+            reviews={reviews}
+            location={location}
+          />
+
+          <BookingDetailsImageGrid
+            mainImage={mainImage}
+            otherImages={otherImages}
+            title={title}
+          />
         </div>
 
-        <BookingDetails />
+        <BookingDetails
+          categoryName={categoryName}
+          firstName={firstName}
+          profileImage={profileImage}
+          room={room}
+          bathroom={bathroom}
+          bedType={bedType}
+          otherGuests={otherGuests}
+        />
 
         <Reviews />
 

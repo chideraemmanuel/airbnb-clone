@@ -1,14 +1,42 @@
 import Image from "next/image";
 import imagee from "@/assets/room.webp";
 import styles from "./BookingDetailsMobileCarousel.module.scss";
+import { urlFor } from "@/sanity";
 
-const images = [1, 2, 3, 4, 5];
+// const images = [1, 2, 3, 4, 5];
 
-const BookingDetailsMobileCarousel = () => {
+interface CarouselProps {
+  mainImage: {
+    asset: any;
+  };
+  otherImages: {
+    asset: any;
+  }[];
+  title: string;
+}
+
+const BookingDetailsMobileCarousel = ({
+  mainImage,
+  otherImages,
+  title,
+}: CarouselProps) => {
   return (
     <div className={styles.bookingDetailsMobileCarousel}>
-      {images.map((image) => (
-        <Image src={imagee} alt="image" />
+      {/*  always display main image */}
+      <Image
+        src={urlFor(mainImage.asset).url()}
+        alt={title}
+        width={500}
+        height={500}
+      />
+      {/* then map through other images */}
+      {otherImages.map((image: { asset: any }) => (
+        <Image
+          src={urlFor(image.asset).url()}
+          alt={title}
+          width={500}
+          height={500}
+        />
       ))}
     </div>
   );

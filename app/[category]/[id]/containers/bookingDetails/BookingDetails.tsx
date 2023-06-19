@@ -2,30 +2,78 @@ import Image from "next/image";
 import Card from "@/components/card/Card";
 import styles from "./BookingDetails.module.scss";
 import avatar from "@/assets/avatar.jpg";
-import { FaBed } from "react-icons/fa";
+import { FaBed, FaShower, FaUser } from "react-icons/fa";
 import MeetYourHost from "../meetYourHost/MeetYourHost";
 import AboutPlace from "../aboutPlace/AboutPlace";
 import BookingCard from "../../components/bookingCard/BookingCard";
+import { urlFor } from "@/sanity";
 
 const percs = [1, 2, 3];
 const percss = [1, 2, 3];
 
-const BookingDetails = () => {
+interface Props {
+  categoryName: string;
+  firstName: string;
+  profileImage: {
+    asset: any;
+  };
+  room: "dedicated" | "shared";
+
+  bathroom: "dedicated" | "shared";
+
+  bedType: "double-bed" | "queen-bed" | "single-bed";
+
+  otherGuests: boolean;
+}
+
+const BookingDetails = ({
+  categoryName,
+  firstName,
+  profileImage,
+  room,
+  bathroom,
+  bedType,
+  otherGuests,
+}: Props) => {
   return (
     <section className={styles.bookingDetails}>
       <div className={styles.bookingDetails__details}>
         <div className={styles.bookingDetails__details_header}>
-          <h2>Room in a rental unit hosted by Golwen</h2>
-          <Image src={avatar} alt="avatar" />
+          {categoryName === "Rooms" && (
+            <h2>Room in a rental unit hosted by {firstName}</h2>
+          )}
+
+          <Image
+            src={urlFor(profileImage.asset).url()}
+            alt={firstName}
+            width={100}
+            height={100}
+          />
         </div>
 
         <div className={styles.bookingDetails__details_percs}>
-          {percs.map((perc) => (
-            <div className={styles.bookingDetails__details_percs_perc}>
-              <FaBed />
-              <span>1 Queen bed and others</span>
-            </div>
-          ))}
+          <div className={styles.bookingDetails__details_percs_perc}>
+            <FaBed />
+            <span>1 {bedType}</span>
+          </div>
+
+          <div className={styles.bookingDetails__details_percs_perc}>
+            <FaShower />
+            {bathroom === "dedicated" ? (
+              <span>Dedicated bathroom</span>
+            ) : (
+              <span>Shared bathroom</span>
+            )}
+          </div>
+
+          <div className={styles.bookingDetails__details_percs_perc}>
+            <FaUser />
+            {otherGuests ? (
+              <span>Other guests might be present</span>
+            ) : (
+              <span>There won't be other guests</span>
+            )}
+          </div>
         </div>
 
         <div className={styles.bookingDetails__details_info}>

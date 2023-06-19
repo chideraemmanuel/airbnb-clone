@@ -6,3 +6,5 @@ const store = configureStore({
     navigation: navigationReducer,
   },
 });
+
+export default store;
