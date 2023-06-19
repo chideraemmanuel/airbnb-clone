@@ -3,24 +3,34 @@ import styles from "./BookingCard.module.scss";
 import { FaFlag, FaStar } from "react-icons/fa";
 import { FiChevronDown } from "react-icons/fi";
 import Link from "next/link";
+import { ReviewsTypes } from "@/types";
 
-const BookingCard = () => {
+interface Props {
+  prices: {
+    withTax: number;
+    withoutTax: number;
+  };
+  rating: string;
+  reviews: ReviewsTypes[];
+}
+
+const BookingCard = ({ prices, rating, reviews }: Props) => {
   return (
     <div className={styles.bookingCard}>
       <Card>
         <div className={styles.bookingCard__header}>
           <div className={styles.bookingCard__header_price}>
-            <h4>$444</h4>
+            <h4>${prices.withTax}</h4>
             <span>Total before taxes</span>
           </div>
 
           <div className={styles.bookingCard__header_review}>
             <div>
               <FaStar />
-              <span>4.89</span>
+              <span>{rating}</span>
             </div>
 
-            <span>- 22 reviews</span>
+            <span>- {reviews.length} reviews</span>
           </div>
         </div>
 

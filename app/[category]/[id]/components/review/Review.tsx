@@ -1,16 +1,19 @@
+import { ReviewsTypes } from "@/types";
 import ReviewGiver from "../../containers/reviews/components/reviewGiver/ReviewGiver";
 import styles from "./Review.module.scss";
 
-const Review = () => {
+interface Props {
+  review: ReviewsTypes;
+}
+
+const Review = ({ review: reviewObject }: Props) => {
+  const { review, reviewDate, reviewGiver } = reviewObject;
+
   return (
     <div className={styles.review}>
-      <ReviewGiver />
+      <ReviewGiver reviewGiver={reviewGiver} reviewDate={reviewDate} />
 
-      <p className={styles.review__paragraph}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At in
-        architecto eius suscipit nostrum dolor veritatis, nemo iste natus
-        sapiente, adipisci quod, iure incidunt tenetur quae alias modi et omnis.
-      </p>
+      <p className={styles.review__paragraph}>{review}</p>
     </div>
   );
 };

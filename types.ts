@@ -111,3 +111,45 @@ export interface propertyTypes {
 
   otherGuests: boolean;
 }
+
+// INDIVIDUAL TYPES
+
+export interface HostTypes {
+  primaryDetails: {
+    firstName: string;
+    lastName: string;
+    profileImage: {
+      asset: any;
+    };
+  };
+  about: {
+    description: string;
+    occupation?: string;
+    favoriteSongInHighSchool?: string;
+    pets?: string;
+    courtesy?: string;
+    school?: string;
+    uniqueAttributes?: string;
+    language?: string;
+  };
+}
+
+export interface CohostsTypes {
+  firstName: string;
+  lastName: string;
+  profileImage: {
+    asset: any;
+  };
+}
+
+export interface ReviewsTypes {
+  reviewGiver: {
+    firstName: string;
+    lastName: string;
+    profileImage: {
+      asset: any;
+    };
+  };
+  reviewDate: string;
+  review: string;
+}

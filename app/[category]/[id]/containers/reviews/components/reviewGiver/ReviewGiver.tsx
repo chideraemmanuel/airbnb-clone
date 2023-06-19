@@ -1,17 +1,40 @@
 import styles from "./ReviewGiver.module.scss";
 import avatar from "@/assets/avatar.jpg";
+import { urlFor } from "@/sanity";
 import Image from "next/image";
 
-const ReviewGiver = () => {
+interface Props {
+  reviewGiver: {
+    firstName: string;
+    lastName: string;
+    profileImage: {
+      asset: any;
+    };
+  };
+  reviewDate: string;
+}
+
+const ReviewGiver = ({ reviewGiver, reviewDate }: Props) => {
+  const {
+    firstName,
+    lastName,
+    profileImage: { asset },
+  } = reviewGiver;
+
   return (
     <div className={styles.reviewGiver}>
       <div className={styles.reviewGiver__image}>
-        <Image src={avatar} alt="avatar" />
+        <Image
+          src={urlFor(asset).url()}
+          alt={`${firstName} ${lastName}`}
+          width={40}
+          height={40}
+        />
       </div>
 
       <div className={styles.reviewGiver__details}>
-        <h5>Tanya</h5>
-        <span>June 2023</span>
+        <h5>{firstName}</h5>
+        <span>{reviewDate}</span>
       </div>
     </div>
   );

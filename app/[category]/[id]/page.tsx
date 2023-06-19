@@ -22,6 +22,7 @@ const BookingDetailsPage = async ({ params }: { params: { id: string } }) => {
     _id,
     title,
     description,
+    amenities,
     prices,
     location,
     mainImage,
@@ -30,15 +31,13 @@ const BookingDetailsPage = async ({ params }: { params: { id: string } }) => {
     bathroom,
     bedType,
     otherGuests,
+    safetyMeasures,
+    cancellationPolicy,
+    houseRules,
     category: { categoryName },
     rating,
     reviews,
-    propertyHosts: {
-      host: {
-        about: { occupation },
-        primaryDetails: { firstName, profileImage },
-      },
-    },
+    propertyHosts: { host, cohosts },
     availableDates,
   } = property[0];
   const { from, to } = availableDates;
@@ -75,18 +74,27 @@ const BookingDetailsPage = async ({ params }: { params: { id: string } }) => {
         </div>
 
         <BookingDetails
+          prices={prices}
+          description={description}
+          amenities={amenities}
+          rating={rating}
           categoryName={categoryName}
-          firstName={firstName}
-          profileImage={profileImage}
+          host={host}
+          cohosts={cohosts}
+          reviews={reviews}
           room={room}
           bathroom={bathroom}
           bedType={bedType}
           otherGuests={otherGuests}
         />
 
-        <Reviews />
+        <Reviews rating={rating} reviews={reviews} />
 
-        <ThingsToKnow />
+        <ThingsToKnow
+          safetyMeasures={safetyMeasures}
+          houseRules={houseRules}
+          cancellationPolicy={cancellationPolicy}
+        />
       </main>
 
       <footer className={styles.bookingDetailsPage__footer}>

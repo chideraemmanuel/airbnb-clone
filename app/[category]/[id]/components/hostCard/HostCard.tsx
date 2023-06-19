@@ -4,29 +4,50 @@ import styles from "./HostCard.module.scss";
 import Card from "@/components/card/Card";
 import avatar from "@/assets/avatar.jpg";
 import { FaStar } from "react-icons/fa";
+import { HostTypes, ReviewsTypes } from "@/types";
+import { urlFor } from "@/sanity";
 
-const HostCard = () => {
+interface Props {
+  host: HostTypes;
+  reviews: ReviewsTypes[];
+  rating: string;
+}
+
+const HostCard = ({ host, reviews, rating }: Props) => {
+  const {
+    primaryDetails: {
+      firstName,
+      lastName,
+      profileImage: { asset },
+    },
+  } = host;
+
   return (
     <Link href="/" className={styles.hostCard}>
       <Card>
         <div className={styles.hostCard__left}>
           <div className={styles.hostCard__left_image}>
-            <Image src={avatar} alt="avatar" />
+            <Image
+              src={urlFor(asset).url()}
+              alt={`${firstName} ${lastName}`}
+              width={50}
+              height={50}
+            />
           </div>
 
-          <h4>Golwen</h4>
+          <h4>{firstName}</h4>
 
           <span>Superhost</span>
         </div>
 
         <div className={styles.hostCard__right}>
           <div>
-            <h5>29</h5>
+            <h5>{reviews.length}</h5>
             <span>Reviews</span>
           </div>
           <div>
             <h5>
-              4.93 <FaStar />
+              {rating} <FaStar />
             </h5>
             <span>Rating</span>
           </div>

@@ -1,17 +1,15 @@
+import { ReviewsTypes } from "@/types";
 import ReviewGiver from "../../containers/reviews/components/reviewGiver/ReviewGiver";
 import styles from "./ReviewCard.module.scss";
 
-const ReviewCard = () => {
+const ReviewCard = ({ review: reviewObject }: { review: ReviewsTypes }) => {
+  const { review, reviewGiver, reviewDate } = reviewObject;
+
   return (
     <div className={styles.reviewCard}>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo eveniet
-        autem blanditiis commodi dolorum tempore voluptatum omnis porro
-        architecto deserunt eum, iure quae quibusdam quidem maxime repellat ipsa
-        non laboriosam?
-      </p>
+      <p>{review}</p>
 
-      <ReviewGiver />
+      <ReviewGiver reviewGiver={reviewGiver} reviewDate={reviewDate} />
     </div>
   );
 };

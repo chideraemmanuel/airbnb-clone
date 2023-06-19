@@ -1,21 +1,27 @@
 import { FiChevronRight } from "react-icons/fi";
 import styles from "./AboutPlace.module.scss";
-import { FaBed, FaCheese } from "react-icons/fa";
+import { FaBed, FaCheese, FaLink } from "react-icons/fa";
 
 const percs = [1, 2, 3, 4, 5];
 
-const AboutPlace = () => {
+interface Props {
+  description: string;
+  bedType: "double-bed" | "queen-bed" | "single-bed";
+  amenities: {
+    amenityTitle: string;
+  }[];
+}
+
+const AboutPlace = ({ description, bedType, amenities }: Props) => {
+  // const test = [...amenities].map(amenity => {
+  //   return amenity.amenityTitle
+  // });
+
   return (
     <section className={styles.aboutPlace}>
       <div className={styles.aboutPlace__description}>
         <h3>About this place</h3>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Reprehenderit quo, illum quidem iusto vel adipisci aut maxime quam
-          quas, nam veniam modi nesciunt unde ipsum porro quis sit libero
-          quisquam, nulla quia minus assumenda hic minima! Laboriosam itaque
-          labore assumenda.
-        </p>
+        <p>{description}</p>
 
         <button>
           <span>Show more</span>
@@ -28,7 +34,7 @@ const AboutPlace = () => {
         <div className={styles.aboutPlace__sleep_box}>
           <FaBed />
           <h5>Bedroom</h5>
-          <span>1 queen bed</span>
+          <span>1 {bedType}</span>
         </div>
       </div>
 
@@ -37,25 +43,25 @@ const AboutPlace = () => {
 
         <div>
           <div className={styles.aboutPlace__percs_one}>
-            {percs.map((perc) => (
+            {amenities.splice(0, 3).map((amenity) => (
               <div>
-                <FaCheese />
-                <span>Security cameras on property</span>
+                <FaLink />
+                <span>{amenity.amenityTitle}</span>
               </div>
             ))}
           </div>
 
-          <div className={styles.aboutPlace__percs_two}>
+          {/* <div className={styles.aboutPlace__percs_two}>
             {percs.map((perc) => (
               <div>
                 <FaCheese />
                 <span>Security cameras on property</span>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
 
-        <button>Show all 28 amenities</button>
+        <button>Show all {amenities.length} amenities</button>
       </div>
     </section>
   );

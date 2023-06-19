@@ -2,21 +2,32 @@ import Image from "next/image";
 import Card from "@/components/card/Card";
 import styles from "./BookingDetails.module.scss";
 import avatar from "@/assets/avatar.jpg";
-import { FaBed, FaShower, FaUser } from "react-icons/fa";
+import { FaBed, FaShower, FaUser, FaUsers } from "react-icons/fa";
 import MeetYourHost from "../meetYourHost/MeetYourHost";
 import AboutPlace from "../aboutPlace/AboutPlace";
 import BookingCard from "../../components/bookingCard/BookingCard";
 import { urlFor } from "@/sanity";
+import { CohostsTypes, HostTypes, ReviewsTypes } from "@/types";
 
 const percs = [1, 2, 3];
 const percss = [1, 2, 3];
 
 interface Props {
   categoryName: string;
-  firstName: string;
-  profileImage: {
-    asset: any;
+  description: string;
+  host: HostTypes;
+  cohosts: CohostsTypes[];
+  reviews: ReviewsTypes[];
+  rating: string;
+  amenities: {
+    amenityTitle: string;
+  }[];
+
+  prices: {
+    withTax: number;
+    withoutTax: number;
   };
+
   room: "dedicated" | "shared";
 
   bathroom: "dedicated" | "shared";
@@ -28,13 +39,22 @@ interface Props {
 
 const BookingDetails = ({
   categoryName,
-  firstName,
-  profileImage,
+  host,
+  cohosts,
+  reviews,
   room,
+  prices,
+  amenities,
+  description,
+  rating,
   bathroom,
   bedType,
   otherGuests,
 }: Props) => {
+  const {
+    primaryDetails: { firstName, profileImage },
+  } = host;
+
   return (
     <section className={styles.bookingDetails}>
       <div className={styles.bookingDetails__details}>
@@ -57,23 +77,27 @@ const BookingDetails = ({
             <span>1 {bedType}</span>
           </div>
 
-          <div className={styles.bookingDetails__details_percs_perc}>
-            <FaShower />
-            {bathroom === "dedicated" ? (
-              <span>Dedicated bathroom</span>
-            ) : (
-              <span>Shared bathroom</span>
-            )}
-          </div>
+          {bathroom && (
+            <div className={styles.bookingDetails__details_percs_perc}>
+              <FaShower />
+              {bathroom === "dedicated" ? (
+                <span>Dedicated bathroom</span>
+              ) : (
+                <span>Shared bathroom</span>
+              )}
+            </div>
+          )}
 
-          <div className={styles.bookingDetails__details_percs_perc}>
-            <FaUser />
-            {otherGuests ? (
-              <span>Other guests might be present</span>
-            ) : (
-              <span>There won't be other guests</span>
-            )}
-          </div>
+          {otherGuests && (
+            <div className={styles.bookingDetails__details_percs_perc}>
+              <FaUsers />
+              {otherGuests ? (
+                <span>Other guests might be present</span>
+              ) : (
+                <span>There won't be other guests</span>
+              )}
+            </div>
+          )}
         </div>
 
         <div className={styles.bookingDetails__details_info}>
@@ -91,13 +115,22 @@ const BookingDetails = ({
         </div>
 
         {/* meet your host */}
-        <MeetYourHost />
+        <MeetYourHost
+          host={host}
+          cohosts={cohosts}
+          reviews={reviews}
+          rating={rating}
+        />
 
         {/* about place */}
-        <AboutPlace />
+        <AboutPlace
+          description={description}
+          bedType={bedType}
+          amenities={amenities}
+        />
       </div>
 
-      <BookingCard />
+      <BookingCard prices={prices} rating={rating} reviews={reviews} />
     </section>
   );
 };
