@@ -4,6 +4,9 @@ import { FaFlag, FaStar } from "react-icons/fa";
 import { FiChevronDown } from "react-icons/fi";
 import Link from "next/link";
 import { ReviewsTypes } from "@/types";
+import { useSelector } from "react-redux";
+import { StoreTypes } from "@/redux/types";
+import { format } from "date-fns";
 
 interface Props {
   prices: {
@@ -15,6 +18,10 @@ interface Props {
 }
 
 const BookingCard = ({ prices, rating, reviews }: Props) => {
+  const { range } = useSelector((store: StoreTypes) => store.dateRange);
+  // console.log(range)
+  const { startDate, endDate } = range[0];
+
   return (
     <div className={styles.bookingCard}>
       <Card>
@@ -38,11 +45,11 @@ const BookingCard = ({ prices, rating, reviews }: Props) => {
           <div className={styles.bookingCard__datePicker_dates}>
             <button>
               <span>Check-in</span>
-              <span>7/7/2023</span>
+              <span>{format(startDate, "MM/dd/yyy")}</span>
             </button>
             <button>
               <span>Check-out</span>
-              <span>7/12/2023</span>
+              <span>{format(startDate, "MM/dd/yyy")}</span>
             </button>
           </div>
 

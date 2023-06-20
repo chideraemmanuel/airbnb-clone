@@ -11,6 +11,7 @@ import ThingsToKnow from "./containers/thingsToKnow/ThingsToKnow";
 import BookingDetailsFooter from "./containers/bookingDetailsFooter/BookingDetailsFooter";
 import { fetchProperty } from "@/utils/fetchProperty";
 import { propertyTypes } from "@/types";
+import DateRangePicker from "@/components/dateRangePicker/DateRangePicker";
 
 const BookingDetailsPage = async ({ params }: { params: { id: string } }) => {
   const property: propertyTypes[] = await fetchProperty(params.id);
@@ -18,32 +19,32 @@ const BookingDetailsPage = async ({ params }: { params: { id: string } }) => {
   // console.log(property[0].propertyHosts);
   // console.log(JSON.stringify(params.id));
 
-  const {
-    _id,
-    title,
-    description,
-    amenities,
-    prices,
-    location,
-    mainImage,
-    otherImages,
-    room,
-    bathroom,
-    bedType,
-    otherGuests,
-    safetyMeasures,
-    cancellationPolicy,
-    houseRules,
-    category: { categoryName },
-    rating,
-    reviews,
-    propertyHosts: { host, cohosts },
-    availableDates,
-  } = property[0];
-  const { from, to } = availableDates;
+  // const {
+  //   _id,
+  //   title,
+  //   description,
+  //   amenities,
+  //   prices,
+  //   location,
+  //   mainImage,
+  //   otherImages,
+  //   room,
+  //   bathroom,
+  //   bedType,
+  //   otherGuests,
+  //   safetyMeasures,
+  //   cancellationPolicy,
+  //   houseRules,
+  //   category: { categoryName },
+  //   rating,
+  //   reviews,
+  //   propertyHosts: { host, cohosts },
+  //   availableDates,
+  // } = property[0];
+  // const { from, to } = availableDates;
 
-  const availableFrom = new Date(from);
-  const availableTo = new Date(to);
+  // const availableFrom = new Date(from);
+  // const availableTo = new Date(to);
 
   return (
     <>
@@ -52,7 +53,7 @@ const BookingDetailsPage = async ({ params }: { params: { id: string } }) => {
       </header>
 
       <main className={styles.bookingDetailsPage__main}>
-        <div className={styles.bookingDetailsPage__main_showcase}>
+        {/* <div className={styles.bookingDetailsPage__main_showcase}>
           <BookingDetailsMobileCarousel
             mainImage={mainImage}
             otherImages={otherImages}
@@ -86,15 +87,17 @@ const BookingDetailsPage = async ({ params }: { params: { id: string } }) => {
           bathroom={bathroom}
           bedType={bedType}
           otherGuests={otherGuests}
-        />
+        /> */}
 
-        <Reviews rating={rating} reviews={reviews} />
+        <DateRangePicker />
+
+        {/* <Reviews rating={rating} reviews={reviews} />
 
         <ThingsToKnow
           safetyMeasures={safetyMeasures}
           houseRules={houseRules}
           cancellationPolicy={cancellationPolicy}
-        />
+        /> */}
       </main>
 
       <footer className={styles.bookingDetailsPage__footer}>
