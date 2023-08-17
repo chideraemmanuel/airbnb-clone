@@ -12,11 +12,11 @@ interface Props {
   houseRules: string[];
 }
 
-const ThingsToKnow = ({
+const ThingsToKnow: React.FC<Props> = ({
   safetyMeasures,
   cancellationPolicy,
   houseRules,
-}: Props) => {
+}) => {
   return (
     <section className={styles.thingsToKnow}>
       <h4 className={styles.thingsToKnow__header}>Things to know</h4>

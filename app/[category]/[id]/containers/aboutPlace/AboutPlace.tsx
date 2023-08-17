@@ -12,7 +12,7 @@ interface Props {
   }[];
 }
 
-const AboutPlace = ({ description, bedType, amenities }: Props) => {
+const AboutPlace: React.FC<Props> = ({ description, bedType, amenities }) => {
   // const test = [...amenities].map(amenity => {
   //   return amenity.amenityTitle
   // });

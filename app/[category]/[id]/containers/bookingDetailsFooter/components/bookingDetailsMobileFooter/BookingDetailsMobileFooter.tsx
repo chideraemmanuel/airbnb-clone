@@ -1,9 +1,10 @@
+import { footerConstants } from "../../constants";
 import FooterList from "../FooterList/FooterList";
 import styles from "./BookingDetailsMobileFooter.module.scss";
 
-const lists = [1, 2, 3, 4];
+// const lists = [1, 2, 3, 4];
 
-const BookingDetailsMobileFooter = () => {
+const BookingDetailsMobileFooter: React.FC = () => {
   return (
     <div className={styles.bookingDetailsMobileFooter}>
       {/* PROBABLY LATER 👇🏾 */}
@@ -13,8 +14,8 @@ const BookingDetailsMobileFooter = () => {
       </div> */}
 
       <div className={styles.bookingDetailsMobileFooter__bottom}>
-        {lists.map((list) => (
-          <FooterList />
+        {footerConstants.map((list) => (
+          <FooterList list={list} />
         ))}
       </div>
     </div>

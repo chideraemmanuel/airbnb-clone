@@ -5,7 +5,7 @@ import BookingDetailsMobileFooter from "./components/bookingDetailsMobileFooter/
 import Link from "next/link";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
-const BookingDetailsFooter = () => {
+const BookingDetailsFooter: React.FC = () => {
   return (
     <div className={styles.bookingDetailsFooter}>
       <BookingDetailsDesktopFooter />

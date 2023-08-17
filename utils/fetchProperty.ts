@@ -17,6 +17,7 @@ export const fetchProperty = async (id: string) => {
 
   try {
     const response = await sanity.fetch(query);
+    // console.log(response);
     return response;
   } catch (error) {
     console.error(error);

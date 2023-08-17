@@ -16,11 +16,11 @@ interface CarouselProps {
   title: string;
 }
 
-const BookingDetailsImageGrid = ({
+const BookingDetailsImageGrid: React.FC<CarouselProps> = ({
   mainImage,
   otherImages,
   title,
-}: CarouselProps) => {
+}) => {
   return (
     <div className={styles.bookingDetailsImageGrid}>
       {/*  always display main image */}

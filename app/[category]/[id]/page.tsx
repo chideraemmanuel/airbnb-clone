@@ -13,34 +13,36 @@ import { fetchProperty } from "@/utils/fetchProperty";
 import { propertyTypes } from "@/types";
 import DateRangePicker from "@/components/dateRangePicker/DateRangePicker";
 
-const BookingDetailsPage = async ({ params }: { params: { id: string } }) => {
+const BookingDetailsPage: React.FC<{ params: { id: string } }> = async ({
+  params,
+}) => {
   const property: propertyTypes[] = await fetchProperty(params.id);
-  // console.log(property[0]);
+  console.log("property", property);
   // console.log(property[0].propertyHosts);
   // console.log(JSON.stringify(params.id));
 
-  // const {
-  //   _id,
-  //   title,
-  //   description,
-  //   amenities,
-  //   prices,
-  //   location,
-  //   mainImage,
-  //   otherImages,
-  //   room,
-  //   bathroom,
-  //   bedType,
-  //   otherGuests,
-  //   safetyMeasures,
-  //   cancellationPolicy,
-  //   houseRules,
-  //   category: { categoryName },
-  //   rating,
-  //   reviews,
-  //   propertyHosts: { host, cohosts },
-  //   availableDates,
-  // } = property[0];
+  const {
+    _id,
+    title,
+    description,
+    amenities,
+    prices,
+    location,
+    mainImage,
+    otherImages,
+    room,
+    bathroom,
+    bedType,
+    otherGuests,
+    safetyMeasures,
+    cancellationPolicy,
+    houseRules,
+    category: { categoryName },
+    rating,
+    reviews,
+    propertyHosts: { host, cohosts },
+    availableDates,
+  } = property[0];
   // const { from, to } = availableDates;
 
   // const availableFrom = new Date(from);
@@ -53,14 +55,16 @@ const BookingDetailsPage = async ({ params }: { params: { id: string } }) => {
       </header>
 
       <main className={styles.bookingDetailsPage__main}>
-        {/* <div className={styles.bookingDetailsPage__main_showcase}>
+        <div className={styles.bookingDetailsPage__main_showcase}>
           <BookingDetailsMobileCarousel
+            // {...property[0]}
             mainImage={mainImage}
             otherImages={otherImages}
             title={title}
           />
 
           <BookingDetailsPageHeader
+            // {...property[0]}
             title={title}
             rating={rating}
             reviews={reviews}
@@ -68,6 +72,7 @@ const BookingDetailsPage = async ({ params }: { params: { id: string } }) => {
           />
 
           <BookingDetailsImageGrid
+            // {...property[0]}
             mainImage={mainImage}
             otherImages={otherImages}
             title={title}
@@ -75,29 +80,30 @@ const BookingDetailsPage = async ({ params }: { params: { id: string } }) => {
         </div>
 
         <BookingDetails
+          // {...property[0]}
+          categoryName={categoryName}
+          host={host}
+          cohosts={cohosts}
           prices={prices}
           description={description}
           amenities={amenities}
           rating={rating}
-          categoryName={categoryName}
-          host={host}
-          cohosts={cohosts}
           reviews={reviews}
           room={room}
           bathroom={bathroom}
           bedType={bedType}
           otherGuests={otherGuests}
-        /> */}
+          cancellationPolicy={cancellationPolicy}
+        />
 
-        <DateRangePicker />
-
-        {/* <Reviews rating={rating} reviews={reviews} />
+        <Reviews rating={rating} reviews={reviews} />
 
         <ThingsToKnow
+          // {...property[0]}
           safetyMeasures={safetyMeasures}
           houseRules={houseRules}
           cancellationPolicy={cancellationPolicy}
-        /> */}
+        />
       </main>
 
       <footer className={styles.bookingDetailsPage__footer}>

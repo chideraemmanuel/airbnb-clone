@@ -1,7 +1,7 @@
 import { FiSearch } from "react-icons/fi";
 import styles from "./BookingDetailsDateFilter.module.scss";
 
-const BookingDetailsDateFilter = () => {
+const BookingDetailsDateFilter: React.FC = () => {
   return (
     <div className={styles.bookingDetailsDateFilter}>
       <span className={styles.bookingDetailsDateFilter__text}>

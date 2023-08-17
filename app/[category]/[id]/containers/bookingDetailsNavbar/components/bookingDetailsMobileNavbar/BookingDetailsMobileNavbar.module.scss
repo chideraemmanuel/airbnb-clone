@@ -1,23 +1,68 @@
 .bookingDetailsMobileNavbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-
-  padding: 20px var(--side-padding);
-
-  svg {
-    font-size: var(--md-font);
-    padding: 7px;
-    border: 1px solid var(--border-color);
-    border-radius: 50%;
-    box-sizing: content-box;
-    background-color: #fff;
-  }
-
-  > div {
+  &__top {
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: space-between;
+    width: 100%;
+
+    padding: 20px var(--side-padding);
+
+    svg {
+      font-size: var(--md-font);
+      padding: 7px;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      box-sizing: content-box;
+      background-color: #fff;
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+
+  &__bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: #fff;
+    padding: 10px var(--side-padding);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      h5 {
+        font-size: var(--base-font);
+      }
+
+      span:nth-child(2) {
+        font-size: var(--sm-font);
+      }
+
+      span:nth-child(3) {
+        font-size: var(--base-font);
+        text-decoration: underline;
+      }
+    }
+
+    &_button {
+      background-color: var(--primary-color);
+      color: #fff;
+      font-size: var(--base-font);
+      border: none;
+      border-radius: 7px;
+      padding: 10px 25px;
+      cursor: pointer;
+    }
   }
 }

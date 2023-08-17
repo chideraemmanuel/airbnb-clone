@@ -1,3 +1,5 @@
+"use client";
+
 import Card from "@/components/card/Card";
 import styles from "./BookingCard.module.scss";
 import { FaFlag, FaStar } from "react-icons/fa";
@@ -17,10 +19,13 @@ interface Props {
   reviews: ReviewsTypes[];
 }
 
-const BookingCard = ({ prices, rating, reviews }: Props) => {
+const BookingCard: React.FC<Props> = ({ prices, rating, reviews }) => {
   const { range } = useSelector((store: StoreTypes) => store.dateRange);
-  // console.log(range)
+  console.log("Range", range[0]);
+  // console.log("Range", range[0].startDate);
   const { startDate, endDate } = range[0];
+
+  // console.log(format(startDate, "MM/dd/yyy"));
 
   return (
     <div className={styles.bookingCard}>
@@ -45,11 +50,19 @@ const BookingCard = ({ prices, rating, reviews }: Props) => {
           <div className={styles.bookingCard__datePicker_dates}>
             <button>
               <span>Check-in</span>
-              <span>{format(startDate, "MM/dd/yyy")}</span>
+              {startDate ? (
+                <span>{format(startDate, "MM/dd/yyy")}</span>
+              ) : (
+                <span>Add a date</span>
+              )}
             </button>
             <button>
               <span>Check-out</span>
-              <span>{format(startDate, "MM/dd/yyy")}</span>
+              {endDate ? (
+                <span>{format(endDate, "MM/dd/yyy")}</span>
+              ) : (
+                <span>Add a date</span>
+              )}
             </button>
           </div>
 

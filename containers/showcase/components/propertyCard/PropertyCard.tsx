@@ -7,7 +7,7 @@ import { propertyTypes } from "@/types";
 import { urlFor } from "@/sanity";
 import { formatMonth } from "@/utils/formatMonth";
 
-const PropertyCard = ({ property }: { property: propertyTypes }) => {
+const PropertyCard: React.FC<{ property: propertyTypes }> = ({ property }) => {
   const {
     _id,
     title,
@@ -45,12 +45,10 @@ const PropertyCard = ({ property }: { property: propertyTypes }) => {
             width={300}
             height={300}
           />
-          {/* <img src={urlFor(mainImage.asset).url()} alt="" /> */}
         </div>
 
         <div className={styles.propertyCard__info}>
           <div className={styles.propertyCard__info_location}>
-            {/* <h4>Milan, Italy</h4> */}
             <h4>{`${location.city}, ${location.country}`}</h4>
 
             <div className={styles.propertyCard__info_location_rating}>

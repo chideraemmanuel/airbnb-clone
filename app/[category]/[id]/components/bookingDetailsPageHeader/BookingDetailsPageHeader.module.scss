@@ -9,6 +9,7 @@
   h1 {
     font-size: var(--lg-font);
     margin-bottom: 10px;
+    text-transform: capitalize;
 
     @media screen and (max-width: 768px) {
       font-size: var(--md-font);

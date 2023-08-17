@@ -9,6 +9,7 @@ import DesktopCategoriesSlider from "@/containers/homeNavbar/components/desktopN
 import TaxToggle from "@/components/taxToggle/TaxToggle";
 import Showcase from "@/containers/showcase/Showcase";
 import DesktopCategoriesFilter from "@/containers/homeNavbar/components/desktopNavigation/components/desktopCategoriesFilter/DesktopCategoriesFilter";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -20,7 +21,9 @@ export default function Home() {
 
       <main className={styles.main}>
         <TaxToggle />
-        <Showcase />
+        <Suspense fallback={<div>Loading Properties...</div>}>
+          <Showcase />
+        </Suspense>
       </main>
     </>
   );

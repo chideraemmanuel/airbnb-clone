@@ -2,9 +2,10 @@ import Image from "next/image";
 import Card from "@/components/card/Card";
 import styles from "./BookingDetails.module.scss";
 import avatar from "@/assets/avatar.jpg";
-import { FaBed, FaShower, FaUser, FaUsers } from "react-icons/fa";
+import { FaBed, FaCalendar, FaShower, FaUser, FaUsers } from "react-icons/fa";
 import MeetYourHost from "../meetYourHost/MeetYourHost";
 import AboutPlace from "../aboutPlace/AboutPlace";
+import DateRangePicker from "@/components/dateRangePicker/DateRangePicker";
 import BookingCard from "../../components/bookingCard/BookingCard";
 import { urlFor } from "@/sanity";
 import { CohostsTypes, HostTypes, ReviewsTypes } from "@/types";
@@ -35,9 +36,14 @@ interface Props {
   bedType: "double-bed" | "queen-bed" | "single-bed";
 
   otherGuests: boolean;
+
+  cancellationPolicy: {
+    fullCancellationPolicy: string;
+    durationInHours: 48 | 24 | 0;
+  };
 }
 
-const BookingDetails = ({
+const BookingDetails: React.FC<Props> = ({
   categoryName,
   host,
   cohosts,
@@ -50,10 +56,13 @@ const BookingDetails = ({
   bathroom,
   bedType,
   otherGuests,
-}: Props) => {
+  cancellationPolicy: { durationInHours },
+}) => {
   const {
     primaryDetails: { firstName, profileImage },
   } = host;
+
+  // const { durationInHours } = cancellationPolicy;
 
   return (
     <section className={styles.bookingDetails}>
@@ -101,7 +110,7 @@ const BookingDetails = ({
         </div>
 
         <div className={styles.bookingDetails__details_info}>
-          {percss.map((percc) => (
+          {room === "dedicated" && (
             <div>
               <FaBed />
               <div>
@@ -111,16 +120,37 @@ const BookingDetails = ({
                 </span>
               </div>
             </div>
-          ))}
+          )}
+
+          {durationInHours > 0 && (
+            <div>
+              <FaCalendar />
+              <div>
+                <h3>Free cancellation for {durationInHours} hours</h3>
+              </div>
+            </div>
+          )}
+
+          {room === "dedicated" && (
+            <div>
+              <FaBed />
+              <div>
+                <h3>Room in rental unit</h3>
+                <span>
+                  Your own room in a home, plus access to shared spaces
+                </span>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* meet your host */}
-        <MeetYourHost
+        {/* <MeetYourHost
           host={host}
           cohosts={cohosts}
           reviews={reviews}
           rating={rating}
-        />
+        /> */}
 
         {/* about place */}
         <AboutPlace
@@ -128,6 +158,8 @@ const BookingDetails = ({
           bedType={bedType}
           amenities={amenities}
         />
+
+        <DateRangePicker />
       </div>
 
       <BookingCard prices={prices} rating={rating} reviews={reviews} />

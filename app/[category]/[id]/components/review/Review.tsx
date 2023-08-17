@@ -6,7 +6,7 @@ interface Props {
   review: ReviewsTypes;
 }
 
-const Review = ({ review: reviewObject }: Props) => {
+const Review: React.FC<Props> = ({ review: reviewObject }) => {
   const { review, reviewDate, reviewGiver } = reviewObject;
 
   return (

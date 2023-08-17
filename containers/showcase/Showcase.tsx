@@ -4,11 +4,7 @@ import PropertyCard from "./components/propertyCard/PropertyCard";
 import { propertyTypes } from "@/types";
 import { fetchProperties } from "@/utils/fetchProperties";
 
-// const dum = [1, 1, 1, , 1, 1, 1, 1, 1, 1, 1, , 1, 1, 1, 1];
-
-// const promise = fetchProperties()
-
-const Showcase = async () => {
+const Showcase: React.FC = async () => {
   const properties = await fetchProperties();
   // console.log(properties[0]);
 

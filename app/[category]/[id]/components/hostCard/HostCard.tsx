@@ -13,7 +13,7 @@ interface Props {
   rating: string;
 }
 
-const HostCard = ({ host, reviews, rating }: Props) => {
+const HostCard: React.FC<Props> = ({ host, reviews, rating }) => {
   const {
     primaryDetails: {
       firstName,

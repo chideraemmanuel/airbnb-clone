@@ -14,7 +14,7 @@ interface Props {
   reviewDate: string;
 }
 
-const ReviewGiver = ({ reviewGiver, reviewDate }: Props) => {
+const ReviewGiver: React.FC<Props> = ({ reviewGiver, reviewDate }: Props) => {
   const {
     firstName,
     lastName,

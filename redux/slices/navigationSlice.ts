@@ -2,15 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 import { NavigationStateTypes } from "../types";
 
 const initialState: NavigationStateTypes = {
-  isTopRightNavActive: true,
+  isTopRightNavActive: false,
 };
 
 const navigationSlice = createSlice({
   name: "nav",
   initialState,
   reducers: {
-    toggleTopRightNav: () => {
-      console.log("toggle");
+    toggleTopRightNav: (state) => {
+      state.isTopRightNavActive = !state.isTopRightNavActive;
+      // console.log("toggle");
     },
   },
 });

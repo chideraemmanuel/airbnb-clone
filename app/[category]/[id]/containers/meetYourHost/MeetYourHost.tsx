@@ -25,7 +25,7 @@ interface Props {
   rating: string;
 }
 
-const MeetYourHost = ({ host, cohosts, reviews, rating }: Props) => {
+const MeetYourHost: React.FC<Props> = ({ host, cohosts, reviews, rating }) => {
   const {
     about: {
       description,

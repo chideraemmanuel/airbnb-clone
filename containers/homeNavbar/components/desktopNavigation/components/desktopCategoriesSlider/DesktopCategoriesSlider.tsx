@@ -1,26 +1,12 @@
+import { categories } from "@/constants";
 import CategorySliderItem from "../../../categorySliderItem/CategorySliderItem";
 import styles from "./DesktopCategoriesSlider.module.scss";
 import { FaFire, FaHome, FaUmbrellaBeach } from "react-icons/fa";
 
-const dummy = [
-  {
-    label: "Rooms",
-    icon: FaHome,
-  },
-  {
-    label: "Beach",
-    icon: FaUmbrellaBeach,
-  },
-  {
-    label: "Trending",
-    icon: FaFire,
-  },
-];
-
-const DesktopCategoriesSlider = () => {
+const DesktopCategoriesSlider: React.FC = () => {
   return (
     <div className={styles.desktopCategoriesSlider}>
-      {dummy.map((item) => (
+      {categories.map((item) => (
         <CategorySliderItem item={item} key={item.label} />
       ))}
     </div>

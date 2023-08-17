@@ -1,15 +1,24 @@
 import styles from "./FooterList.module.scss";
 
-const listItems = [1, 2, 3, 4, 5];
+// const listItems = [1, 2, 3, 4, 5];
 
-const FooterList = () => {
+interface Props {
+  list: {
+    header: string;
+    list: string[];
+  };
+}
+
+const FooterList = ({ list: listObject }: Props) => {
+  const { header, list } = listObject;
+
   return (
     <div className={styles.footerList}>
-      <h6 className={styles.footerList__header}>List Header</h6>
+      <h6 className={styles.footerList__header}>{header}</h6>
 
       <ul className={styles.footerList__list}>
-        {listItems.map((item) => (
-          <li>Supporting people with disabilities</li>
+        {list.map((item) => (
+          <li>{item}</li>
         ))}
       </ul>
     </div>

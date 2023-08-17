@@ -1,7 +1,40 @@
 .dateRangePicker {
-  //   border: 1px solid var(--border-color);
+  &__double {
+    display: block;
+    // border: 1px solid var(--border-color);
 
-  > * {
-    border: 1px solid var(--border-color);
+    > * {
+      border: 1px solid var(--border-color);
+    }
+
+    @media screen and (max-width: 1130px) {
+      display: none;
+    }
+
+    // @media screen and (max-width: 768px) {
+    //   display: block !important;
+    // }
+  }
+
+  &__single {
+    display: none;
+    // border: 1px solid var(--border-color);
+
+    > * {
+      border: 1px solid var(--border-color);
+    }
+
+    @media screen and (max-width: 1130px) {
+      display: flex;
+    }
+
+    // @media screen and (max-width: 768px) {
+    //   display: none !important;
+    // }
+
+    @media screen and (max-width: 768px) {
+      display: flex !important;
+      justify-content: center;
+    }
   }
 }

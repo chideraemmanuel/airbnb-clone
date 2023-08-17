@@ -6,8 +6,8 @@ const initialState: DateRangeTypes = {
   range: [
     {
       //   startDate: format(new Date(), "MM/dd/yyy"),
-      //   startDate: new Date(),
-      startDate: null,
+      startDate: new Date(),
+      // startDate: null,
       endDate: null,
       key: "selection",
     },
@@ -19,7 +19,7 @@ const dateRangeSlice = createSlice({
   initialState,
   reducers: {
     setRange: (state, action) => {
-      console.log("action", action);
+      // console.log("action", action);
       state.range = action.payload;
     },
   },

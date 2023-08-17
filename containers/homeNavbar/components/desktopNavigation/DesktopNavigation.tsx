@@ -8,7 +8,9 @@ import TopRightNav from "../topRightNav/TopRightNav";
 import NavContainer from "../navContainer/NavContainer";
 import MobileLogo from "@/components/logo/mobileLogo/MobileLogo";
 
-const DesktopNavigation = ({ children }: { children: React.ReactNode }) => {
+const DesktopNavigation: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   return (
     <NavContainer>
       <div className={styles.desktopNavigation}>

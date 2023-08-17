@@ -3,7 +3,7 @@ import DesktopCategoriesSlider from "../desktopCategoriesSlider/DesktopCategorie
 import styles from "./DesktopCategoriesFilter.module.scss";
 import { IoMdSwitch } from "react-icons/io";
 
-const DesktopCategoriesFilter = () => {
+const DesktopCategoriesFilter: React.FC = () => {
   return (
     <div className={styles.desktopCategoriesFilter}>
       <DesktopCategoriesSlider />

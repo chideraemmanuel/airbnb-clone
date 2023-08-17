@@ -4,7 +4,7 @@ import TabletNavigation from "@/containers/homeNavbar/components/tabletNavigatio
 import BookingDetailsDateFilter from "./components/bookingDetailsDateFilter/BookingDetailsDateFilter";
 import BookingDetailsMobileNavbar from "./components/bookingDetailsMobileNavbar/BookingDetailsMobileNavbar";
 
-const BookingDetailsNavbar = () => {
+const BookingDetailsNavbar: React.FC = () => {
   return (
     <nav className={styles.bookingDetailsNavbar}>
       <DesktopNavigation children={<BookingDetailsDateFilter />} />

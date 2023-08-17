@@ -11,7 +11,7 @@ interface Props {
   reviews: ReviewsTypes[];
 }
 
-const Reviews = ({ rating, reviews }: Props) => {
+const Reviews: React.FC<Props> = ({ rating, reviews }) => {
   return (
     <section className={styles.reviews}>
       <h4 className={styles.reviews__header}>

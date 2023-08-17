@@ -28,12 +28,12 @@ interface HeaderProps {
   };
 }
 
-const BookingDetailsPageHeader = ({
+const BookingDetailsPageHeader: React.FC<HeaderProps> = ({
   title,
   rating,
   reviews,
   location,
-}: HeaderProps) => {
+}) => {
   return (
     <div className={styles.bookingDetailsPageHeader}>
       {/* <h1>Center place Graslin - Private room La Cambronne</h1> */}

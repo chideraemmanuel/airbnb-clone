@@ -2,11 +2,14 @@ import { FaHome } from "react-icons/fa";
 import styles from "./CategorySliderItem.module.scss";
 import { IconType } from "react-icons/lib";
 
-const CategorySliderItem = ({
-  item,
-}: {
-  item: { icon: IconType; label: string };
-}) => {
+interface Props {
+  item: {
+    icon: IconType;
+    label: string;
+  };
+}
+
+const CategorySliderItem: React.FC<Props> = ({ item }) => {
   const { label, icon: Icon } = item;
 
   return (

@@ -15,11 +15,11 @@ interface CarouselProps {
   title: string;
 }
 
-const BookingDetailsMobileCarousel = ({
+const BookingDetailsMobileCarousel: React.FC<CarouselProps> = ({
   mainImage,
   otherImages,
   title,
-}: CarouselProps) => {
+}) => {
   return (
     <div className={styles.bookingDetailsMobileCarousel}>
       {/*  always display main image */}
